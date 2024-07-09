@@ -1,0 +1,21 @@
+// ALL-options-of-HTML-document _______________________________ //
+
+@mixin html_body_content {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+@mixin container {
+    max-width: 1170px;
+    padding: 0 .9375rem;
+    margin: 0 auto;
+    position: relative;
+    z-index: 20;
+}
+
+@mixin html_font_family {
+    font-family: $_sans_serif;
+}
