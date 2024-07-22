@@ -1,0 +1,17 @@
+.trello-header-wrapp {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    border: 3px solid #665555;
+    border-radius: 10px;
+    margin: 25px 0;
+    padding: 5px 10px;
+
+    .time-wrap {
+        border: 1px solid #665555;
+        border-radius: 5px;
+        padding: 5px;
+    }
+}

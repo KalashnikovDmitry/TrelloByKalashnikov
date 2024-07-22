@@ -1,0 +1,180 @@
+.modal {
+    display: flex; /* По умолчанию скрыто */
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.6); /* полупрозрачный фон */
+
+    .close-modal {
+        position: absolute;
+        top: 22.5%;
+        right: 37.5%;
+        width: 24px;
+        height: 24px;
+        opacity: 0.2;
+        cursor: pointer;
+        transition: opacity ease 0.5s;
+        z-index: 70;
+    }
+    .close-modal:hover, .close-modal:focus {
+        opacity: 1;
+    }
+
+    .close-modal::before,
+    .close-modal::after {
+        content: '';
+        position: absolute;
+        top: 10px;
+        display: block;
+        width: 24px;
+        height: 3px;
+        background: #e97e7e;
+    }
+    
+    .close-modal::before {
+        transform: rotate(45deg);
+    }
+    
+    .close-modal::after {
+        transform: rotate(-45deg);
+    }
+
+    .modal-content {
+        background-color: #fefefe;
+        margin: 15% auto;
+        padding: 20px;
+        border: 1px solid #615e5e;
+        border-radius: 10px;
+        width: 350px;
+        height: 350px;
+        max-width: 600px;
+        box-shadow: 0 4px 8px hsla(135, 80%, 47%, 0.2);
+        position: relative;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+
+            .main-modal-title {
+                text-align: center;
+            }
+
+            input {
+                width: 100%;
+                max-width: 400px;
+                padding: 10px 15px;
+                margin: 10px 0;
+                font-size: 16px;
+                color: #333;
+                background-color: #f9f9f9;
+                border: 1px solid #ccc;
+                border-radius: 25px;
+                box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+                transition: all 0.3s ease;
+                outline: none;
+            }
+    
+            input:focus {
+                border-color: #66afe9;
+                box-shadow: 0 0 8px rgba(102, 175, 233, 0.6);
+                background-color: #fff;
+            }
+    
+            input::placeholder {
+                color: #aaa;
+            }
+    
+            textarea {
+                width: 100%;
+                max-width: 400px;
+                padding: 10px 15px;
+                margin: 10px 0;
+                font-size: 16px;
+                color: #333;
+                background-color: #f9f9f9;
+                border: 1px solid #ccc;
+                border-radius: 25px;
+                box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+                transition: all 0.3s ease;
+                outline: none;
+                resize: none;
+            }
+    
+            textarea:focus {
+                border-color: #66afe9;
+                box-shadow: 0 0 8px rgba(102, 175, 233, 0.6);
+                background-color: #fff;
+            }
+    
+            textarea::placeholder {
+                color: #aaa;
+            }
+
+            .form-actions {
+
+                select {
+                    width: 100%;
+                    max-width: 400px;
+                    padding: 10px;
+                    margin: 10px 0;
+                    font-size: 16px;
+                    color: #333;
+                    background-color: #f9f9f9;
+                    border: 1px solid #ccc;
+                    border-radius: 25px;
+                    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+                    appearance: none;
+                    -webkit-appearance: none;
+                    -moz-appearance: none;
+                    transition: all 0.3s ease;
+                    outline: none;
+                    cursor: pointer;
+                    background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"><path fill="none" stroke="%23333" stroke-width="2" d="M2 7l10 10L22 7"/></svg>');
+                    background-repeat: no-repeat;
+                    background-position: right 10px center;
+                    background-size: 12px;
+                }
+        
+                select:focus {
+                    border-color: #66afe9;
+                    box-shadow: 0 0 8px rgba(102, 175, 233, 0.6);
+                    background-color: #fff;
+                }
+        
+                select option {
+                    padding: 10px;
+                    background-color: #fff;
+                    color: #333;
+                }
+        
+                select option:hover {
+                    background-color: #f0f0f0;
+                }
+        
+                .addBtnTodo {
+                    margin-top: 10px;
+                    padding: 10px 50px;
+                    border: none;
+                    border-radius: 10px;
+                    background-color: #18d648bd;
+                    cursor: pointer;
+                }
+            }
+    
+            
+        }
+        
+        
+    }
+}
+

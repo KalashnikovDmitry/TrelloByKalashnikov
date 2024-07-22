@@ -1,8 +1,9 @@
-const ROOT_ELEMENT = document.getElementById('root');
+import HEADER_ELEMENT from "./components/header/trelloHeader.js";
+import MAIN_ELEMENT from "./components/main/trelloMain.js";
+import { getListTodo, getProgressList, ROOT_ELEMENT } from "./utils.js";
+import createList from "./components/createList.js";
 
-const CONTAINER = document.createElement('div');
-CONTAINER.classList.add('container');
 
-CONTAINER.textContent = 'MY TRELLO PROJECT';
-
-ROOT_ELEMENT.append(CONTAINER);
+ROOT_ELEMENT.append(HEADER_ELEMENT(), MAIN_ELEMENT());
+createList(getListTodo(),'listTodo');
+createList(getProgressList(), 'inProgressTodo');
