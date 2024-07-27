@@ -76,7 +76,7 @@ function editTodoSub(event) {
 
     let todoList = getListTodo();
     const todoIndex = todoList.findIndex(todo => todo.id === todoId);
-
+    
      if (todoIndex !== -1) {
          todoList[todoIndex].title = todoTitle;
          todoList[todoIndex].description = todoDescription;
