@@ -1,17 +1,82 @@
-.trello-header-wrapp {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    border: 3px solid #665555;
-    border-radius: 10px;
-    margin: 25px 0;
-    padding: 5px 10px;
+.trello-header {
+    @include header_bg;
 
-    .time-wrap {
-        border: 1px solid #665555;
-        border-radius: 5px;
-        padding: 5px;
+    .trello-header-wrapp {
+        @include header_wrap;
+
+        .trello-logo {
+            @include flex_column;
+            justify-content: center;
+            align-items: center;
+
+            .logo-title {
+                @include logo_title;
+                margin-bottom: 15px;
+            }
+        }
+
+        .addBtnTodo {
+            position: relative;
+            z-index: 80;
+            width: 35px;
+            height: 35px;
+            border: none;
+            border-radius: 50%;
+            background-color: $_main_color;
+
+            .spanBtnAdd {
+                position: absolute;
+                z-index: 90;
+                width: 35px;
+                height: 35px;
+                opacity: 0.2;
+                cursor: pointer;
+                transition: opacity ease 0.5s;
+                top: 0%;
+                right: 0%;
+            }
+
+            .spanDescription {
+                @include logo_title;
+                position: absolute;
+                width: 150px;
+                z-index: 91;
+                top: 7px;
+                left: 50px;
+                font-size: 16px;
+                color: $_todo_title_bg;
+            }
+
+            .spanBtnAdd:hover, .spanBtnAdd:focus {
+                opacity: 1;
+            }
+
+            .spanBtnAdd::before,
+            .spanBtnAdd::after {
+                content: '';
+                position: absolute;
+                top: 17px;
+                left: 25%;
+                display: block;
+                width: 18px;
+                height: 2px;
+                background: $_todo_title_bg; 
+            }
+    
+            .spanBtnAdd::before {
+                transform: rotate(90deg);
+            }
+            
+            .spanBtnAdd::after {
+                transform: rotate(-180deg);
+            }
+        }
+    
+        .time-wrap {
+            @include time_wrap;
+        }
     }
+
 }
+
+

@@ -1,60 +1,74 @@
 .trello-main {
 
     .todos-wrap {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        padding: 0 15px;
+        @include todos_wrap;
 
         .list-wrap {
-            position: relative;
-            z-index: 20;
-            width: 450px;
-            border: 3px solid rgb(100, 100, 100);
-            border-radius: 10px 10px 0 0;
-            margin: 5px;
-            text-align: center;
-            padding: 10px;
+            @include list_wrap;
 
-            &:first-child, &:last-child {
-                border-bottom: none;
-            }
 
             .todo-list-title {
-                display: flex;
-                flex-direction: row;
-                justify-content: space-between;
-                align-items: center;
-                margin-bottom: 10px;
-                background-color: #e97e7e;
-                border-radius: 10px;
-                padding: 5px;;
+                @include todo_list_title_wrap;
+
+                h2 {
+                    @include todo_list_title_h2;
+                }
+
+                span {
+                    @include todo_list_title_span;
+                }
             }
 
             .todo-list {
                 
                 .todo-item {
-                    width: 100%;
-                    display: flex;
-                    flex-direction: row;
-                    justify-content: space-between;
-                    margin: 0 auto 5px;
-                    padding: 5px;
-                    border: 1px solid black;
-                    border-radius: 10px;
+                    @include todo_item;
 
                     .todo-info-part-1 {
-                        display: flex;
-                        flex-direction: column;
-                        justify-content: space-between;
-                        align-items: start;
+                        @include todo_info_part;
+        
+                        .todo-title {
+                            @include todo_title;
+                        }
+
+                        .description-item-wrap {
+                            @include description_item_wrap;
+
+                            p {
+                                @include description_item_wrap_p;
+                            }
+                        }
+
+                        span {
+                            @include user_info_span;
+                        }
                     }
 
                     .todo-info-part-2 {
-                        display: flex;
-                        flex-direction: column;
-                        justify-content: space-between;
+                        @include todo_info_part;
+                        width: 40%;
                         align-items: end;
+
+                        .btn-wrap {
+                            @include flex_row;
+                            margin-bottom: 5px;
+
+                            .editBtn {
+                                @include edit_btn;
+                            }
+
+                            .deleteBtn {
+                                @include delete_btn;
+                            }
+                        }
+
+                        .progressBtn {
+                            @include progress_btn;
+                        }
+
+                        .todo-time {
+                            @include todo_date;
+                        }
                     }
                 }
 
@@ -63,17 +77,126 @@
                 }
             }
 
-            .addBtnTodo {
-                position: absolute;
-                z-index: 70;
-                width: 360px;
-                padding: 10px 50px;
-                border: 3px solid rgb(100, 100, 100);
-                border-radius: 0 0 10px 10px;
-                background-color: hsla(135, 80%, 47%);
-                cursor: pointer;
-                top: 100%;
-                left: -3px;
+            .inProgress-list-title {
+                @include todo_list_title_wrap;
+                background-color: $_todo_progress_bg;
+
+                h2 {
+                    @include todo_list_title_h2;
+                }
+
+                span {
+                    @include todo_list_title_span;
+                }
+
+
+            }
+
+            .progress-item {
+                @include todo_item;
+                background-color: $_todo_progress_item_bg;
+                
+                .todo-info-part-1 {
+                    @include todo_info_part;
+    
+                    .todo-title {
+                        @include todo_title;
+                    }
+
+                    .description-item-wrap {
+                        @include description_item_wrap;
+
+                        p {
+                            @include description_item_wrap_p;
+                        }
+                    }
+
+                    span {
+                        @include user_info_span;
+                    }
+                }
+
+                .todo-info-part-2 {
+                    @include todo_info_part;
+                    width: 40%;
+                    align-items: end;
+
+                    .btn-wrap {
+                        @include flex_row;
+                        margin-bottom: 5px;
+
+                        .backBtn {
+                            @include delete_btn;
+                            margin-right: 4px;
+                        }
+
+                        .completeBtn {
+                            @include progress_btn;
+                        }
+                    }
+
+                    .todo-time {
+                        @include todo_date;
+                    }
+                }
+            }
+
+            .done-item {
+                @include todo_item;
+                background-color: $_todo_done_item_bg;
+                
+                .todo-info-part-1 {
+                    @include todo_info_part;
+    
+                    .todo-title {
+                        @include todo_title;
+                    }
+
+                    .description-item-wrap {
+                        @include description_item_wrap;
+
+                        p {
+                            @include description_item_wrap_p;
+                        }
+                    }
+
+                    span {
+                        @include user_info_span;
+                    }
+                }
+
+                .todo-info-part-2 {
+                    @include todo_info_part;
+                    width: 40%;
+                    align-items: end;
+
+                    .btn-wrap {
+                        @include flex_row;
+                        margin-bottom: 5px;
+
+                        .deleteBtn {
+                            @include delete_btn;
+                            margin-right: 4px;
+                        }
+                    }
+
+                    .todo-time {
+                        @include todo_date;
+                    }
+                }
+            }
+
+            .inDone-list-title {
+                @include todo_list_title_wrap;
+                background-color: $_todo_done_bg;
+
+                h2 {
+                    @include todo_list_title_h2;
+                }
+
+                span {
+                    @include todo_list_title_span;
+                }
             }
         }
 

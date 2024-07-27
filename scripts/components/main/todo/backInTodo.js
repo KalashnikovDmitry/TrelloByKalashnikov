@@ -2,19 +2,19 @@ import { getListTodo, getProgressList, setListTodo, setProgressList } from "../.
 import renderList from "../../renderList.js";
 
 
-function inProgress(event) {
+function backTodo(event) {
     const currentListTodo = getListTodo();
     const id = event.target.dataset.id;
     const currentListProgress = getProgressList();
 
    
-    const itemToMoveIndex = currentListTodo.findIndex(item => item.id === id);
+    const itemToMoveIndex = currentListProgress.findIndex(item => item.id === id);
     if (itemToMoveIndex === -1) return;
 
-    const [itemToMove] = currentListTodo.splice(itemToMoveIndex, 1);
+    const [itemToMove] = currentListProgress.splice(itemToMoveIndex, 1);
 
-    itemToMove.isProgress = true;
-    currentListProgress.push(itemToMove);
+    itemToMove.isProgress = false;
+    currentListTodo.push(itemToMove);
 
     setListTodo(currentListTodo);
     setProgressList(currentListProgress);
@@ -28,4 +28,4 @@ function inProgress(event) {
     countTodo.textContent = currentListTodo.length;
 } 
 
-export default inProgress;
+export default backTodo;

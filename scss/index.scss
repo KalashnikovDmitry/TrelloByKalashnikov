@@ -9,12 +9,27 @@
 
 * {
     @include html_body_content;
+    
 }
 
 html {
     @include html_font_family;
+    @include bg_options; 
+    background-image: url('../img/background.png');
+    height: 100%;  
 }
 
 .container {
     @include container;
+    
+}
+
+button {
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    opacity: 0.8;
+    scale: 0.9;
 }

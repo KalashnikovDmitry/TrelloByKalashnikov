@@ -1,7 +1,7 @@
 import TODO_ELEMENT from "./main/todo/todoElement.js";
 
-function renderList(todos, list) {
-    const LIST_ELEMENT = document.getElementById('itemsList');
+function renderList(todos, list, items) {
+    const LIST_ELEMENT = document.getElementById(items);
     LIST_ELEMENT.innerHTML = '';
     LIST_ELEMENT.append(...todos.map(TODO_ELEMENT));
     const todo = document.getElementById(list);

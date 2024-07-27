@@ -6,7 +6,7 @@ function removeTodo(event) {
     const currentList = getListTodo();
     const updatedList  = currentList.filter((item) => item.id !== id);
     setListTodo(updatedList);
-    renderList(updatedList, 'listTodo');
+    renderList(updatedList, 'listTodo', 'todoItems');
 }
 
 export default removeTodo;

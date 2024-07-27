@@ -1,7 +1,4 @@
 import CONTAINER_ELEMENT from "../container.js";
-import { ADD_MODAL_ELEMENT } from "../modals/createModal.js";
-import { createAddForm } from "../modals/todoModalForm.js";
-
 
 function MAIN_ELEMENT() {
     const container = CONTAINER_ELEMENT();
@@ -26,14 +23,8 @@ function MAIN_ELEMENT() {
     const countTodo = document.createElement('span');
     countTodo.setAttribute('id', 'countTodo');
 
-    const addBtn = document.createElement('button');
-    addBtn.classList.add('addBtnTodo');
-    addBtn.textContent = 'ADD';
-    addBtn.addEventListener('click', () => ADD_MODAL_ELEMENT(createAddForm()));
-
-
     todo_list_title.append(title, countTodo);
-    todo_list.append(todo_list_title, addBtn);
+    todo_list.append(todo_list_title);
 //////////////////////////////////////////////////////////////////////////////////
 
 
@@ -48,7 +39,8 @@ function MAIN_ELEMENT() {
     inProgressTitle.textContent = 'IN PROGRESS:';
 
     const countInProgress = document.createElement('span');
-    countInProgress.setAttribute('id', 'countInProgress');
+    countInProgress.setAttribute('id', 'countProgress');
+    countInProgress.textContent = '0';
 
     inProgress_list_title.append(inProgressTitle, countInProgress);
     inProgress_list.append(inProgress_list_title);
@@ -58,6 +50,21 @@ function MAIN_ELEMENT() {
     const done_list = document.createElement('div');
     done_list.classList.add('list-wrap');
     done_list.setAttribute('id', 'doneTodo');
+
+    const inDone_list_title = document.createElement('div');
+    inDone_list_title.classList.add('inDone-list-title');
+
+    const inDoneTitle = document.createElement('h2');
+    inDoneTitle.textContent = 'DONE:';
+
+    const countInDone = document.createElement('span');
+    countInDone.setAttribute('id', 'countDone');
+    countInDone.textContent = '0';
+
+    inDone_list_title.append(inDoneTitle, countInDone);
+    done_list.append(inDone_list_title);
+
+    ///////////////////////////////////////////////////////////////
 
     main.append(container);
     container.append(todos_wrap);

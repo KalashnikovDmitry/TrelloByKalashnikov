@@ -13,7 +13,7 @@ export function createAddForm() {
 
     const formTitle = document.createElement('h2');
     formTitle.classList.add('main-modal-title');
-    formTitle.textContent = 'Add your TODO!';
+    formTitle.textContent = 'ADD YOUR TODO!';
 
     const todoTitle = document.createElement('input');
     todoTitle.setAttribute('id', 'titleAddTodoForm');
@@ -54,7 +54,7 @@ export function createAddForm() {
     addTodo.setAttribute('id', 'addTodo');
     addTodo.setAttribute('type', 'submit');
     addTodo.classList.add('addBtnTodo');
-    addTodo.textContent = 'Add TODO';
+    addTodo.textContent = 'ADD';
         
     actions.append(todoUserList, addTodo);
 
@@ -74,7 +74,7 @@ function addTodoSub(event) {
              title: formTitle.value,
              description: formDescription.value,
              userName: userName.value,
-             createdDate: new Date().toUTCString(),
+             createdDate: new Date().toLocaleString(),
              isDone: false,
              isProgress: false,
          }
@@ -83,7 +83,7 @@ function addTodoSub(event) {
           currentList.push(todo);
           setListTodo(currentList);
           TODO_ELEMENT(todo);
-          renderList(currentList, 'listTodo');
+          renderList(currentList, 'listTodo', 'todoItems');
           
           closeModalWindow();
          

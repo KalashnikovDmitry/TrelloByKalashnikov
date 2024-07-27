@@ -1,5 +1,7 @@
 import CONTAINER_ELEMENT from "../container.js";
 import getTime from "./time.js";
+import { ADD_MODAL_ELEMENT } from "../modals/createModal.js";
+import { createAddForm } from "../modals/todoModalForm.js";
 
 
 function HEADER_ELEMENT() {
@@ -16,8 +18,22 @@ function HEADER_ELEMENT() {
     logoWrap.classList.add('trello-logo');
     const logoTitle = document.createElement('h2');
     logoTitle.classList.add('logo-title');
-    logoTitle.textContent = 'TRELLO';
-    logoWrap.append(logoTitle);
+    logoTitle.textContent = 'TRELLO_DK';
+    
+
+    const addBtn = document.createElement('div');
+    addBtn.classList.add('addBtnTodo');
+
+    const spanBtn = document.createElement('span');
+    spanBtn.classList.add('spanBtnAdd');
+    spanBtn.addEventListener('click', () => ADD_MODAL_ELEMENT(createAddForm()));
+
+    const spanDesc = document.createElement('span');
+    spanDesc.classList.add('spanDescription');
+    spanDesc.textContent = 'Add your TODO+'
+
+    addBtn.append(spanBtn, spanDesc);
+    logoWrap.append(logoTitle, addBtn);
     
     const timeWrap = document.createElement('div'); // Блок со временем
     timeWrap.classList.add('time-wrap');
