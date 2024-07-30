@@ -169,6 +169,15 @@
                     background-color: #18d648bd;
                     cursor: pointer;
                 }
+
+                .editBtnTodo {
+                    margin-top: 10px;
+                    padding: 10px 50px;
+                    border: none;
+                    border-radius: 10px;
+                    background-color: $_todo_progress_bg;
+                    cursor: pointer;
+                }
             }
     
             

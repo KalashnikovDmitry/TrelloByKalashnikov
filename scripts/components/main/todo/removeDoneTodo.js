@@ -1,4 +1,4 @@
-import { getDoneList, setDoneList } from "../../../utils.js";
+import { getDoneList, getListTodo, getProgressList, setDoneList } from "../../../utils.js";
 import renderList from "../../renderList.js";
 
 function removeDoneTodo(event) {
@@ -8,6 +8,10 @@ function removeDoneTodo(event) {
     setDoneList(updatedList);
     renderList(updatedList, 'doneTodo', 'doneItems');
 
+    const countTodo = document.getElementById('countTodo');
+    countTodo.textContent = getListTodo().length;
+    const countProgress = document.getElementById('countProgress');
+    countProgress.textContent = getProgressList().length;
     const countDone = document.getElementById('countDone');
     countDone.textContent = updatedList.length;
 }
