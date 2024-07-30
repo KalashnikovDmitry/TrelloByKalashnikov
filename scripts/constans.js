@@ -1,0 +1,4 @@
+const LOCAL_STORAGE_TODO_KEY = 'todo';
+const IN_LOCAL_KEY = 'inLocal';
+
+export {LOCAL_STORAGE_TODO_KEY, IN_LOCAL_KEY}

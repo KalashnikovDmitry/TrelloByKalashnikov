@@ -1,0 +1,204 @@
+.trello-main {
+
+    .todos-wrap {
+        @include todos_wrap;
+
+        .list-wrap {
+            @include list_wrap;
+
+
+            .todo-list-title {
+                @include todo_list_title_wrap;
+
+                h2 {
+                    @include todo_list_title_h2;
+                }
+
+                span {
+                    @include todo_list_title_span;
+                }
+            }
+
+            .todo-list {
+                
+                .todo-item {
+                    @include todo_item;
+
+                    .todo-info-part-1 {
+                        @include todo_info_part;
+        
+                        .todo-title {
+                            @include todo_title;
+                        }
+
+                        .description-item-wrap {
+                            @include description_item_wrap;
+
+                            p {
+                                @include description_item_wrap_p;
+                            }
+                        }
+
+                        span {
+                            @include user_info_span;
+                        }
+                    }
+
+                    .todo-info-part-2 {
+                        @include todo_info_part;
+                        width: 40%;
+                        align-items: end;
+
+                        .btn-wrap {
+                            @include flex_row;
+                            margin-bottom: 5px;
+
+                            .editBtn {
+                                @include edit_btn;
+                            }
+
+                            .deleteBtn {
+                                @include delete_btn;
+                            }
+                        }
+
+                        .progressBtn {
+                            @include progress_btn;
+                        }
+
+                        .todo-time {
+                            @include todo_date;
+                        }
+                    }
+                }
+
+                .todo-item:last-child {
+                    margin-bottom: 0;
+                }
+            }
+
+            .inProgress-list-title {
+                @include todo_list_title_wrap;
+                background-color: $_todo_progress_bg;
+
+                h2 {
+                    @include todo_list_title_h2;
+                }
+
+                span {
+                    @include todo_list_title_span;
+                }
+
+
+            }
+
+            .progress-item {
+                @include todo_item;
+                background-color: $_todo_progress_item_bg;
+                
+                .todo-info-part-1 {
+                    @include todo_info_part;
+    
+                    .todo-title {
+                        @include todo_title;
+                    }
+
+                    .description-item-wrap {
+                        @include description_item_wrap;
+
+                        p {
+                            @include description_item_wrap_p;
+                        }
+                    }
+
+                    span {
+                        @include user_info_span;
+                    }
+                }
+
+                .todo-info-part-2 {
+                    @include todo_info_part;
+                    width: 40%;
+                    align-items: end;
+
+                    .btn-wrap {
+                        @include flex_row;
+                        margin-bottom: 5px;
+
+                        .backBtn {
+                            @include delete_btn;
+                            margin-right: 4px;
+                        }
+
+                        .completeBtn {
+                            @include progress_btn;
+                        }
+                    }
+
+                    .todo-time {
+                        @include todo_date;
+                    }
+                }
+            }
+
+            .done-item {
+                @include todo_item;
+                background-color: $_todo_done_item_bg;
+                
+                .todo-info-part-1 {
+                    @include todo_info_part;
+    
+                    .todo-title {
+                        @include todo_title;
+                    }
+
+                    .description-item-wrap {
+                        @include description_item_wrap;
+
+                        p {
+                            @include description_item_wrap_p;
+                        }
+                    }
+
+                    span {
+                        @include user_info_span;
+                    }
+                }
+
+                .todo-info-part-2 {
+                    @include todo_info_part;
+                    width: 40%;
+                    align-items: end;
+
+                    .btn-wrap {
+                        @include flex_row;
+                        margin-bottom: 5px;
+
+                        .deleteBtn {
+                            @include delete_btn;
+                            margin-right: 4px;
+                        }
+                    }
+
+                    .todo-time {
+                        @include todo_date;
+                    }
+                }
+            }
+
+            .inDone-list-title {
+                @include todo_list_title_wrap;
+                background-color: $_todo_done_bg;
+
+                h2 {
+                    @include todo_list_title_h2;
+                }
+
+                span {
+                    @include todo_list_title_span;
+                }
+            }
+        }
+
+    }
+}

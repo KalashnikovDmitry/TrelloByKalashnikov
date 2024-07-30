@@ -17,5 +17,188 @@
 }
 
 @mixin html_font_family {
-    font-family: $_sans_serif;
+    font-family: $_montserrat, $_sans_serif;
+}
+
+@mixin flex_row {
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+@mixin flex_column {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+@mixin bg_options {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+
+
+///////////////////////////////////////////////////////////
+//HEADER//
+
+@mixin header_bg {
+    padding: 10px 0 0;
+    margin-bottom: 15px;
+}
+
+@mixin header_wrap {
+    @include flex_row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@mixin time_wrap {
+    font-size: 28px;
+    font-weight: 400;
+    color: $_main_color;
+    font-style: italic;
+}
+
+@mixin logo_title {
+    font-size: 36px;
+    font-weight: 700;
+    color: $_main_color;
+    font-style: italic;
+}
+
+/////////////////////////////////////////////////////
+/// MAIN///
+
+
+@mixin todos_wrap {
+    @include flex_row;
+    justify-content: space-between;
+    padding: 0 15px;
+}
+
+@mixin list_wrap {
+    position: relative;
+    z-index: 20;
+    width: 350px;
+    border: none;
+    background-color: $_list_bg;
+    border-radius: 10px;
+    margin: 5px;
+    text-align: center;
+    padding: 10px;
+}
+
+@mixin todo_list_title_wrap {
+    @include flex_row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    background-color: $_todo_title_bg;
+    border-radius: 10px;
+    padding: 5px 10px;
+}
+
+@mixin todo_list_title_h2 {
+    @include logo_title;
+    font-size: 18px;
+}
+
+@mixin todo_list_title_span {
+    @include time_wrap;
+    font-size: 18px;
+}
+
+@mixin todo_item {
+    width: 330px;
+    @include flex_row;
+    justify-content: space-between;
+    margin: 0 auto 5px;
+    padding: 5px;
+    border: none;
+    border-radius: 10px;
+    background-color: $_todo_item_bg;
+    color: $_main_color;
+}
+
+@mixin todo_info_part {
+    @include flex_column;
+    width: 60%;
+    justify-content: space-between;
+    align-items: start;
+}
+
+@mixin todo_title {
+    font-size: 16px;
+    font-weight: 600;
+    font-style: italic;
+    border: 1px solid $_main_color;
+    border-radius: 5px;
+    padding: 3px 5px;
+}
+
+@mixin description_item_wrap {
+    width: 100%;
+    text-align: start;
+    padding: 3px 5px;
+}
+
+@mixin description_item_wrap_p {
+    font-size: 14px;
+    font-weight: 400;
+    font-style: italic;
+}
+
+@mixin user_info_span {
+    font-size: 14px;
+    font-weight: 800;
+    font-style: italic;
+    text-transform: uppercase;
+    color: $_todo_title_bg;
+    border: 1px solid $_todo_title_bg;
+    padding: 3px 5px;
+    border-radius: 5px;
+}
+
+@mixin edit_btn {
+    margin-right: 5px;
+    border: none;
+    background-color: $_todo_progress_bg;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 12px;
+    font-weight: 400;
+    font-style: italic;
+    color: $_main_color;
+}
+
+@mixin delete_btn {
+    border: none;
+    background-color: rgb(241, 82, 82);
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 12px;
+    font-weight: 400;
+    font-style: italic;
+    color: $_main_color;
+}
+
+@mixin progress_btn {
+    margin-right: 5px;
+    border: none;
+    background-color: $_todo_done_bg;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 12px;
+    font-weight: 400;
+    font-style: italic;
+    color: $_main_color;
+}
+
+@mixin todo_date {
+    font-size: 12px;
+    font-weight: 400;
+    font-style: italic;
+    color: $_main_color
 }
